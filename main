@@ -1,23 +1,23 @@
 //Setting The Pin Numbers
-const int button = 2;     // the number of the pushbutton pin
+const int touch sensor = 2;     // the number of the touch sensor pin
 const int buzzer =  4;      // the number of the LED pin
 
 // variables:
-int buttonState = 0;         // variable for reading the pushbutton status
+int touch sensorState = 0;         // variable for reading the Touch Sensor status
 
 void setup() {
   // initialize the buzzer as an output:
   pinMode(buzzer, OUTPUT);
-  // initialize the pushbutton as an input:
-  pinMode(button, INPUT);
+  // initialize the Touch Sensor as an input:
+  pinMode(touchsensor, INPUT);
 }
 
 void loop() {
-  // read state of the pushbutton value:
-  buttonState = digitalRead(button);
+  // read state of the Touch sensor value:
+  touchsensorState = digitalRead(button);
 
-  // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
-  if (buttonState == HIGH) {
+  // check if the Touch sensor is pressed. If it is, the touchsensorState is HIGH:
+  if (touchsensorState == HIGH) {
     // buzzer will emit sound:
     digitalWrite(buzzer, HIGH);
   } else {
