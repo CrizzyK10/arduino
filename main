@@ -1,0 +1,27 @@
+//Setting The Pin Numbers
+const int button = 2;     // the number of the pushbutton pin
+const int buzzer =  4;      // the number of the LED pin
+
+// variables:
+int buttonState = 0;         // variable for reading the pushbutton status
+
+void setup() {
+  // initialize the buzzer as an output:
+  pinMode(buzzer, OUTPUT);
+  // initialize the pushbutton as an input:
+  pinMode(button, INPUT);
+}
+
+void loop() {
+  // read state of the pushbutton value:
+  buttonState = digitalRead(button);
+
+  // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
+  if (buttonState == HIGH) {
+    // buzzer will emit sound:
+    digitalWrite(buzzer, HIGH);
+  } else {
+    // buzzer will not sound:
+    digitalWrite(buzzer, LOW);
+  }
+}
