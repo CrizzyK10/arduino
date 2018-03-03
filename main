@@ -22,5 +22,5 @@ if (touchsensorState == HIGH) {                 // check if the touch sensor is 
 } 
 if(millis() - timestamp > timeout) {
     digitalWrite(buzzer, LOW);                  // buzzer will not sound:
-}
   }
+}
