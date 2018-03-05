@@ -1,26 +1,29 @@
 // Setting The Pin Numbers
-const int touchsensor = 2;                      // the number of the touchsensor pin
-const int buzzer =  4;                          // the number of the LED pin
+const int touchsensor = 2;                                                        // the number of the touchsensor pin
+const int buzzer =  4;                                                            // the number of the LED pin
 
 // variables:
-int touchsensorState = 0;                       // variable for reading the touchsensor status
-unsigned long timestamp = 0;
-unsigned long timeout = 1000;
+int touchsensorState = 0;                                                         // variable for reading the touchsensor status
+int previoustouchsensorState = 0;                                                 // variable for reading wether touch sensor is pushed or not
+unsigned long timestamp = 0;                                                      // Records time
+unsigned long timeout = 1000;                                                     // Duration after which buzzer will time out
 
 void setup() {
   
-  pinMode(buzzer, OUTPUT);                      // initialize the buzzer as an output
-  pinMode(touchsensor, INPUT);                  // initialize the touchsensor as an input
+  pinMode(buzzer, OUTPUT);                                                        // initialize the buzzer as an output
+  pinMode(touchsensor, INPUT);                                                    // initialize the touchsensor as an input
 }
 void loop() {
   
-  touchsensorState = digitalRead(touchsensor);  // read state of the pushbutton value:
+  touchsensorState = digitalRead(touchsensor);                                    // read state of the pushbutton value:
 
-if (touchsensorState == HIGH) {                 // check if the touch sensor is pressed. If it is, the touchsensorState is HIGH:
-    digitalWrite(buzzer, HIGH);                 // buzzer will emit sound:
-    timestamp = millis();                       // Timing button press
+if (previoustouchsensorState == LOW && touchsensorState == HIGH) {                // check if the touch sensor is pressed. If it is, the touchsensorState is HIGH:
+    digitalWrite(buzzer, HIGH);                                                   // buzzer will emit sound:
+    timestamp = millis();                                                         // Timing button press
 } 
+previoustouchsensorState  = touchsensorState;
+
 if(millis() - timestamp > timeout) {
-    digitalWrite(buzzer, LOW);                  // buzzer will not sound:
+    digitalWrite(buzzer, LOW);                                                    // buzzer will not sound:
   }
 }
