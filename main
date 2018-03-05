@@ -1,6 +1,7 @@
 // Setting The Pin Numbers
 const int touchsensor = 2;                                                        // the number of the touchsensor pin
-const int buzzer =  4;                                                            // the number of the LED pin
+const int buzzer =  4;                                                            // the number of the buzzer pin
+const int Led = LED_BUILTIN;                                                      // Built in LED
 
 // variables:
 int touchsensorState = 0;                                                         // variable for reading the touchsensor status
@@ -12,6 +13,7 @@ void setup() {
   
   pinMode(buzzer, OUTPUT);                                                        // initialize the buzzer as an output
   pinMode(touchsensor, INPUT);                                                    // initialize the touchsensor as an input
+  pinMode(LED_BUILTIN, OUTPUT);                                                   // initialize LED as output
 }
 void loop() {
   
@@ -19,11 +21,13 @@ void loop() {
 
 if (previoustouchsensorState == LOW && touchsensorState == HIGH) {                // check if the touch sensor is pressed. If it is, the touchsensorState is HIGH:
     digitalWrite(buzzer, HIGH);                                                   // buzzer will emit sound:
+    digitalWrite(LED_BUILTIN, HIGH);                                              // LED will flash
     timestamp = millis();                                                         // Timing button press
 } 
 previoustouchsensorState  = touchsensorState;
 
 if(millis() - timestamp > timeout) {
     digitalWrite(buzzer, LOW);                                                    // buzzer will not sound:
+    digitalWrite(LED_BUILTIN, LOW);                                               // LED will not flash
   }
 }
