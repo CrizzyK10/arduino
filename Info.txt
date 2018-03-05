@@ -1,0 +1,11 @@
+Autho URL : https://accounts.google.com/o/oauth2/auth?client_id=156593857184-q5iml99k5lri51u7bgmmi8dlvio743hn.apps.googleusercontent.com&response_type=code&redirect_uri=https://crizzyk10.temboolive.com/callback/google&approval_prompt=force&access_type=offline&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fspreadsheets&state=60af92d3-0107-4953-8fa7-b30259173881
+
+Callback ID : crizzyk10/60af92d3-0107-4953-8fa7-b30259173881
+
+Client ID : 156593857184-q5iml99k5lri51u7bgmmi8dlvio743hn.apps.googleusercontent.com
+
+Client Secret : S7X8RDl6sExQnQNUX-oyLfo3
+
+Access Token : ya29.Glt1BSsBnYGbWsKNSBjlZ0TRkuX24zoQ7t8QKRXhbWTw0Ij5fAmNoR7jw2R_xcLHP6C37r43uz--UnCBNNknEyFQWZDeFCvbFeWpRh_a6K9nHdQWjCImnWzb5Tpn
+
+Spreadsheet ID : 1hCnyjqdCKctXBcBD7WjRNDDRePYxVeJE4XP667M_USM
